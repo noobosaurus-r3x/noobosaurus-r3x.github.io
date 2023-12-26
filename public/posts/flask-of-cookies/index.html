@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Flask of Cookies</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	==================<br>
+	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
+	==================
+	<div style="float: right;">Le Blog de Noobosaurus R3x</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Flask of Cookies</h1>
+			<b><time>29.06.2023 00:00</time></b>
+		       
+		           <a href="/tags/tools">tools</a>
+        	       
+		           <a href="/tags/articles">articles</a>
+        	       
+
+			<div>
+				<h1 id="flask-of-cookies---encodedecode-flask-cookies">Flask Of Cookies - Encode/Decode Flask Cookies</h1>
+<p>Flask Of Cookies is a Python script that allows you to encode and decode Flask session cookies. It provides a command-line interface for encoding and decoding session cookies with or without a secret key.
+inspired by the <code>flask-session-cookie-manager</code> project by Wilson Sumanang and Alexandre ZANNI.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Encode a Flask session cookie using a secret key and session cookie structure.</li>
+<li>Decode a Flask session cookie with or without a secret key.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>To use Flask Of Cookies, follow these steps:</p>
+<ol>
+<li>Copy/paste the script or download the <a href="../../static/files/FOC.py"><code>FOC.py</code></a> file.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Flask Of Cookies - Encode/Decode Flask Cookies&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Author: Noobosaurus R3x - Inspired by flask-session-cookie-manager by Wilson Sumanang, Alexandre ZANNI&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> ast
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> itsdangerous <span style="color:#f92672">import</span> URLSafeTimedSerializer
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> flask.sessions <span style="color:#f92672">import</span> SecureCookieSessionInterface
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MockApp</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, secret_key):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>secret_key <span style="color:#f92672">=</span> secret_key
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_padding</span>(cookie_value):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Add padding to the base64-encoded cookie value&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    missing_padding <span style="color:#f92672">=</span> len(cookie_value) <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> missing_padding <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        cookie_value <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;=&#34;</span> <span style="color:#f92672">*</span> (<span style="color:#ae81ff">4</span> <span style="color:#f92672">-</span> missing_padding)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cookie_value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(secret_key, session_cookie_structure):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Encode a Flask session cookie&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        app <span style="color:#f92672">=</span> MockApp(secret_key)
+</span></span><span style="display:flex;"><span>        session_cookie_structure <span style="color:#f92672">=</span> ast<span style="color:#f92672">.</span>literal_eval(session_cookie_structure)
+</span></span><span style="display:flex;"><span>        si <span style="color:#f92672">=</span> SecureCookieSessionInterface()
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> URLSafeTimedSerializer(app<span style="color:#f92672">.</span>secret_key, si<span style="color:#f92672">.</span>salt, si<span style="color:#f92672">.</span>serializer)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> s<span style="color:#f92672">.</span>dumps(session_cookie_structure)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[Encoding error] Input isn&#39;t a valid Python dictionary: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[Encoding error] </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decode</span>(session_cookie_value, secret_key<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Decode a Flask cookie&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> secret_key <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            payload <span style="color:#f92672">=</span> session_cookie_value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> payload<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;.&#39;</span>):
+</span></span><span style="display:flex;"><span>                payload <span style="color:#f92672">=</span> payload[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;.&#34;</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> add_padding(data)
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>urlsafe_b64decode(data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            app <span style="color:#f92672">=</span> MockApp(secret_key)
+</span></span><span style="display:flex;"><span>            si <span style="color:#f92672">=</span> SecureCookieSessionInterface()
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">=</span> URLSafeTimedSerializer(app<span style="color:#f92672">.</span>secret_key, si<span style="color:#f92672">.</span>salt, si<span style="color:#f92672">.</span>serializer)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> s<span style="color:#f92672">.</span>loads(session_cookie_value)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[Decoding error] Input isn&#39;t a valid Flask session cookie: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[Decoding error] </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(
+</span></span><span style="display:flex;"><span>        description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Flask Cookie Decoder/Encoder&#39;</span>,
+</span></span><span style="display:flex;"><span>        epilog<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Inspired by &#39;Flask Session Cookie Decoder/Encoder&#39; by Wilson Sumanang, Alexandre ZANNI&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    subparsers <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>add_subparsers(help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sub-command help&#39;</span>, dest<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;subcommand&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    parser_encode <span style="color:#f92672">=</span> subparsers<span style="color:#f92672">.</span>add_parser(<span style="color:#e6db74">&#39;encode&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;encode&#39;</span>)
+</span></span><span style="display:flex;"><span>    parser_encode<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-s&#39;</span>, <span style="color:#e6db74">&#39;--secret-key&#39;</span>, metavar<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;string&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>                               help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Secret key&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    parser_encode<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-t&#39;</span>, <span style="color:#e6db74">&#39;--cookie-structure&#39;</span>, metavar<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;string&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>                               help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Session cookie structure&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    parser_decode <span style="color:#f92672">=</span> subparsers<span style="color:#f92672">.</span>add_parser(<span style="color:#e6db74">&#39;decode&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;decode&#39;</span>)
+</span></span><span style="display:flex;"><span>    parser_decode<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-s&#39;</span>, <span style="color:#e6db74">&#39;--secret-key&#39;</span>, metavar<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;string&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>                               help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Secret key&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    parser_decode<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-c&#39;</span>, <span style="color:#e6db74">&#39;--cookie-value&#39;</span>, metavar<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;string&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>                               help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Session cookie value&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> args<span style="color:#f92672">.</span>subcommand <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;encode&#39;</span>:
+</span></span><span style="display:flex;"><span>        print(encode(args<span style="color:#f92672">.</span>secret_key, args<span style="color:#f92672">.</span>cookie_structure))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> args<span style="color:#f92672">.</span>subcommand <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;decode&#39;</span>:
+</span></span><span style="display:flex;"><span>        print(decode(args<span style="color:#f92672">.</span>cookie_value, args<span style="color:#f92672">.</span>secret_key))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><ol start="2">
+<li>Ensure you have Python3 installed on your system.</li>
+<li>Install the required dependencies by running the following command:
+<code>pip install flask itsdangerous</code></li>
+<li>Open a terminal or command prompt and navigate to the directory where <code>FOC.py</code> is located.</li>
+<li>Run the script with the desired subcommand:</li>
+</ol>
+<ul>
+<li>To display the help message and available options, use the <code>-h</code> option:</li>
+</ul>
+<pre tabindex="0"><code>python3 FOC.py -h
+</code></pre><ul>
+<li>To encode a Flask session cookie, use the <code>encode</code> subcommand:</li>
+</ul>
+<pre tabindex="0"><code>python3 FOC.py encode -s &lt;secret_key&gt; -t &lt;cookie_structure&gt;
+</code></pre><ul>
+<li>
+<p>Replace <code>&lt;secret_key&gt;</code> with your Flask secret key.</p>
+</li>
+<li>
+<p>Replace <code>&lt;cookie_structure&gt;</code> with the session cookie structure as a valid Python dictionary string. for example : &lsquo;{&ldquo;number&rdquo;:&ldquo;326410031505&rdquo;,&ldquo;username&rdquo;:&ldquo;admin&rdquo;}&rsquo;</p>
+</li>
+<li>
+<p>To decode a Flask session cookie with the secret key, use the <code>decode</code> subcommand:</p>
+</li>
+</ul>
+<pre tabindex="0"><code>python3 FOC.py decode -s &lt;secret_key&gt; -c &lt;cookie_value&gt;
+</code></pre><ul>
+<li>
+<p>Replace <code>&lt;secret_key&gt;</code> with your Flask secret key.</p>
+</li>
+<li>
+<p>Replace <code>&lt;cookie_value&gt;</code> with the session cookie value to decode.</p>
+</li>
+<li>
+<p>To decode a Flask session cookie without the secret key, use the <code>decode</code> subcommand:</p>
+</li>
+</ul>
+<pre tabindex="0"><code>python3 FOC.py decode -c &lt;cookie_value&gt;
+</code></pre><ul>
+<li>Replace <code>&lt;cookie_value&gt;</code> with the session cookie value to decode.</li>
+</ul>
+<ol start="6">
+<li>The encoded or decoded result will be printed in the terminal.</li>
+</ol>
+<hr>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Flask Of Cookies was inspired by the <code>flask-session-cookie-manager</code> project by Wilson Sumanang and Alexandre ZANNI.
+<a href="https://github.com/noraj/flask-session-cookie-manager">https://github.com/noraj/flask-session-cookie-manager</a></p>
+<hr>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/evil-sourcer/">Evil Sourcer</a></li>
+				
+				<li><a href="/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></li>
+				
+				<li><a href="/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></li>
+				
+				<li><a href="/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></li>
+				
+				<li><a href="/posts/flask-of-cookies/">Flask of Cookies</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2023 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
+	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
+	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
+	<a href="https://github.com/noobosaurus-r3"><b>Github</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
