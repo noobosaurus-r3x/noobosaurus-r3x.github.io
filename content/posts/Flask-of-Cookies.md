@@ -30,7 +30,7 @@ inspired by the `flask-session-cookie-manager` project by Wilson Sumanang and Al
 To use Flask Of Cookies, follow these steps:
 
 1. Copy/paste the script or download the [`FOC.py`](../../static/files/FOC.py) file.
-```bash
+```python
 #!/usr/bin/env python3
 """Flask Of Cookies - Encode/Decode Flask Cookies"""
 """Author: Noobosaurus R3x - Inspired by flask-session-cookie-manager by Wilson Sumanang, Alexandre ZANNI"""
