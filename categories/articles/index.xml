@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>articles on Nooblogaurus</title>
+    <link>https://noobosaurus-r3x.github.io/categories/articles/</link>
+    <description>Recent content in articles on Nooblogaurus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://noobosaurus-r3x.github.io/categories/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evil Sourcer</title>
+      <link>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</guid>
+      <description>Une Porte Dérobée pour des Attaques Avancées - Introduction&#xA;Étant un grand utilisateur de chatGPT, il m&amp;rsquo;arrive fréquemment de creuser dans les détails des nouvelles fonctionnalités. Récemment, j&amp;rsquo;ai découvert un vecteur d&amp;rsquo;attaque utilisant les modèles GPT personnalisés qui offre des possibilités d&amp;rsquo;exploitation multiples et inquiétantes. Je souhaite partager cette découverte pour sensibiliser la communauté à ce potentiel de menace.&#xA;- Découverte de la Faille&#xA;Depuis quelques semaines, nous avons la possibilité de créer nos propres gpt, en leur donnant des instructions précises et nous avons aussi la possibilité de feed notre gpt perso avec des bases de données de notre choix.</description>
+    </item>
+  </channel>
+</rss>
