@@ -1,4 +1,5 @@
-baseURL = 'https://nooblogaurus.github.io/'
+baseURL = 'baseURL = "https://noobosaurus-r3x.github.io/nooblogaurus.github.io/"
+'
 languageCode = 'en-us'
 title = 'Nooblogaurus'
 theme = "smol"
