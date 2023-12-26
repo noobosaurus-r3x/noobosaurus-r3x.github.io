@@ -1,6 +1,6 @@
 +++
 author = "Noobosaurus R3x"
-title = "Osintgram"
+title = "Osintagram"
 date = "2023-06-24"
 description = "retrieve infos from user on Instagram"
 type = [
@@ -89,7 +89,7 @@ View the output in the console or check the saved output file, if specified.
 # Credits
 Osintgram is inspired by Palenath's Toutatis script. Special thanks to Palenath for the original creation. https://github.com/megadose/toutatis
 ---
-Here you can check the script [Osintgram.py](../../static/files/osintagram.py):
+Here you can check the script [Osintagram.py](../../static/files/osintagram.py):
 ```python
 import argparse
 import json
