@@ -16,7 +16,7 @@ tags = [
 +++
 
 Just a simple bash script to automate the process of cracking a zip file using zip2john and john the ripper.
-
+---
 ```bash
 #!/bin/bash
 

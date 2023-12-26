@@ -2,7 +2,7 @@
 author = "Noobosaurus R3x"
 title = "RedFlagger"
 date = "2023-06-05"
-description = "zip2john automation"
+description = "Customizable Red Flag Reports Download Script"
 type = [
     "posts"
 ]
@@ -15,27 +15,27 @@ tags = [
 ]
 +++
 
-# RedFlagger
+
 
 RedFlagger is a bash script designed to download and aggregate reports from 'https://dl.red.flag.domains/daily/' based on user-specified conditions.
 
 It is inspired by NewRedflag, a python script written by lil-doudou.
 
 https://github.com/lil-doudou/NewRedflag
-
+---
 ## Usage
 
 ```./redflagger.sh [--latest|--days num] [--all] [--output filename]```
 
 
-
+---
 ### Options
 
 - `--latest` or `-l`: Downloads the report from 1 day ago.
 - `--days num` or `-d num`: Downloads the report from 'num' days ago.
 - `--all` or `-a`: Downloads all available reports.
 - `--output filename` or `-o filename`: Specifies the output file to store the downloaded reports. Defaults to 'output.txt' if no filename is provided.
-
+---
 ### Examples
 
 Download all the reports available since 3 days ago, saving them to 'my_file.txt':
@@ -50,7 +50,7 @@ Download the reports from 3 days ago, saving them to 'my_file.txt':
 
 ```./redflagger.sh -d 3 -o my_file.txt```
 
-
+---
 The script :
 ```bash
 #!/bin/bash
