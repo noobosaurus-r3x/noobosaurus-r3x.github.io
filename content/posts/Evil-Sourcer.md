@@ -4,7 +4,7 @@ title = "Evil Sourcer"
 date = "2023-12-01"
 description = "Exploitation des Modèles GPT Personnalisés"
 type = [
-    "Posts"
+    "posts"
 ]
 categories = [
     "articles"

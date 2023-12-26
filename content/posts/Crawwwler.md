@@ -1,16 +1,16 @@
 +++
 author = "Noobosaurus R3x"
 title = "Crawwwler"
-date = "2023-12-01"
-description = "Exploitation des Modèles GPT Personnalisés"
+date = "2023-06-09"
+description = "Simple Web Crawler"
 type = [
     "posts"
 ]
 categories = [
-    "articles"
+    "tools"
 ]
 tags = [
-    "chatGPT",
+    "tools",
     "articles"
 ]
 +++

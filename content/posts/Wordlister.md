@@ -10,7 +10,7 @@ categories = [
     "tools"
 ]
 tags = [
-    "tool",
+    "tools",
     "articles"
 ]
 +++
