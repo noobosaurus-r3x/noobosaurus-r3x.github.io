@@ -125,7 +125,7 @@ if __name__ == "__main__":
     main()
 ```
 
-2. Ensure you have Python 3 installed on your system.
+2. Ensure you have Python3 installed on your system.
 3. Install the required dependencies by running the following command:
 `pip install flask itsdangerous`
 4. Open a terminal or command prompt and navigate to the directory where `FOC.py` is located.
@@ -133,29 +133,29 @@ if __name__ == "__main__":
 
 - To display the help message and available options, use the `-h` option:
 ```
-  python3 FOC.py -h
+python3 FOC.py -h
 ```
 
 - To encode a Flask session cookie, use the `encode` subcommand:
-  ```
-  python3 FOC.py encode -s <secret_key> -t <cookie_structure>
-  ```
-  - Replace `<secret_key>` with your Flask secret key.
-  - Replace `<cookie_structure>` with the session cookie structure as a valid Python dictionary string. for example : '{"number":"326410031505","username":"admin"}'
+```
+python3 FOC.py encode -s <secret_key> -t <cookie_structure>
+```
+- Replace `<secret_key>` with your Flask secret key.
+- Replace `<cookie_structure>` with the session cookie structure as a valid Python dictionary string. for example : '{"number":"326410031505","username":"admin"}'
 
 
 - To decode a Flask session cookie with the secret key, use the `decode` subcommand:
-  ```
-  python3 FOC.py decode -s <secret_key> -c <cookie_value>
-  ```
-  - Replace `<secret_key>` with your Flask secret key.
-  - Replace `<cookie_value>` with the session cookie value to decode.
+```
+python3 FOC.py decode -s <secret_key> -c <cookie_value>
+```
+- Replace `<secret_key>` with your Flask secret key.
+- Replace `<cookie_value>` with the session cookie value to decode.
 
 - To decode a Flask session cookie without the secret key, use the `decode` subcommand:
-  ```
-  python3 FOC.py decode -c <cookie_value>
-  ```
-  - Replace `<cookie_value>` with the session cookie value to decode.
+```
+python3 FOC.py decode -c <cookie_value>
+```
+- Replace `<cookie_value>` with the session cookie value to decode.
 
 6. The encoded or decoded result will be printed in the terminal.
 ---
