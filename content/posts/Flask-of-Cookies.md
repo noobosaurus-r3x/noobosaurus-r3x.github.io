@@ -165,3 +165,4 @@ Flask Of Cookies was inspired by the `flask-session-cookie-manager` project by W
 https://github.com/noraj/flask-session-cookie-manager
 
 
+---

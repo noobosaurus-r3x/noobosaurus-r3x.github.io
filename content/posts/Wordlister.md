@@ -69,3 +69,4 @@ You can specify as many text files as you want, separated by spaces.
 
 The script will concatenate the contents of all the provided text files, extract the words, remove duplicates, sort them, and save the resulting wordlist in a file called wordlist.txt in the same directory. It will display a message indicating the number of words in the wordlist.
 
+---

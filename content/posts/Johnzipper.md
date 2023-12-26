@@ -50,3 +50,4 @@ else
   echo "Failed to crack the password. Please try using a different password list or check if 'john the ripper' is installed and accessible."
 fi
 ```
+---

@@ -97,3 +97,4 @@ The results are saved in a text file named results_<URL>.txt, where <URL> is the
 ```./crawler.sh -u https://noobosaurusr3x.fr```
 
 This will download the HTML from https://noobosaurusr3x.fr, extract all the links, check their HTTP status codes, and save the results in a file named results_https_noobosaurusr3x_fr.txt.
+---
