@@ -1,0 +1,56 @@
+baseURL = 'https://nooblogaurus.github.io/'
+languageCode = 'en-us'
+title = 'Nooblogaurus'
+theme = "smol"
+
+# Parameters
+[params]
+    subtitle = "Le Blog de Noobosaurus R3x"
+    dateFmt = "02.01.2006 15:04"
+
+# Header
+[menu]
+  [[menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 1 
+
+  [[menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 2 
+
+  [[menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 3
+
+# Footer
+  [[menu.footer]]
+        name = "Github"
+        url = "https://github.com/noobosaurus-r3"
+        weight = 5 
+
+    [[menu.footer]]
+        name = "Twitter"
+        url = "https://twitter.com/NoobosaurusR3x"
+        weight = 3
+
+    [[menu.footer]]
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/noobosaurus-r3x-683783231/"
+        weight = 4 
+
+    [[menu.footer]]
+        name = "YouTube_HacktBack"
+        url = "https://www.youtube.com/@HacktBack"
+        weight = 1
+
+    [[menu.footer]]
+        name = "YouTube_Noobosaurus"
+        url = "https://www.youtube.com/@Noobosaurus"
+        weight = 2
+    
