@@ -11,7 +11,8 @@ categories = [
 ]
 tags = [
     "tools",
-    "articles"
+    "python",
+    "osint"
 ]
 +++
 

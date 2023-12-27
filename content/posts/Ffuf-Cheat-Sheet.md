@@ -10,8 +10,8 @@ categories = [
     "cheat-sheets"
 ]
 tags = [
-    "cheat-sheets",
-    "articles"
+    "cheat-sheets"
+    
 ]
 +++
 ---

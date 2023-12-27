@@ -11,7 +11,7 @@ categories = [
 ]
 tags = [
     "tools",
-    "articles"
+    "bash"
 ]
 +++
 ---
