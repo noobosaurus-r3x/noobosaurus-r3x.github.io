@@ -73,3 +73,5 @@ ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr
 -   FFUF supports multiple payload locations in the same request by using the `FUZZ` keyword multiple times. For example: `https://example.org/path/FUZZ/another_path/FUZZ`
 -   FFUF also supports using variables to specify payload locations. For example: `https://example.org/path/{var1}/another_path/{var2}`
 ---
+If you want to check my video (in french) about ffuf :
+{{< youtube id="zSLSuhZYx4o" >}}

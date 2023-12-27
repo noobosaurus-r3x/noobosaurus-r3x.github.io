@@ -65,3 +65,5 @@ hydra -L /path/to/userlist.txt -P /path/to/pasword_list.txt 10.10.10.10 -t 4 ftp
 hydra -L /path/to/userlist.txt -P path/to/pasword_list.txt 10.10.10.10 http-get /webdav
 ```
 ---
+If you want to watch my video on hydra, in french only : 
+{{< youtube id="Fu6Xn8RpO7Q" >}}
