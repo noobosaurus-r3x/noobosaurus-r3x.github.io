@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Nooblogaurus</title>
+    <link>https://noobosaurus-r3x.github.io/tags/python/</link>
+    <description>Recent content in python on Nooblogaurus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://noobosaurus-r3x.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flask of Cookies</title>
+      <link>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</guid>
+      <description>Flask Of Cookies - Encode/Decode Flask Cookies Flask Of Cookies is a Python script that allows you to encode and decode Flask session cookies. It provides a command-line interface for encoding and decoding session cookies with or without a secret key. inspired by the flask-session-cookie-manager project by Wilson Sumanang and Alexandre ZANNI.&#xA;Features Encode a Flask session cookie using a secret key and session cookie structure. Decode a Flask session cookie with or without a secret key.</description>
+    </item>
+    <item>
+      <title>ffutree</title>
+      <link>https://noobosaurus-r3x.github.io/posts/ffuftree/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/ffuftree/</guid>
+      <description>ffuftree : a Directory Tree Builder for ffuf Output This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output. Requirements Python 3.x colorama Installation Clone the repository to your local machine: git clone https://github.com/noobosaurus-r3x/ffuftree cd ffuftree Install the required dependencies: pip install colorama Usage To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output.</description>
+    </item>
+    <item>
+      <title>Osintagram</title>
+      <link>https://noobosaurus-r3x.github.io/posts/osintagram/</link>
+      <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/osintagram/</guid>
+      <description>osintagram Osintagram is a Python script inspired by Palenath&amp;rsquo;s Toutatis script.&#xA;I worked by adding a few options and rewriting his code. It is obviously not perfect but I thought it would be cool to share it anyway.&#xA;That script allows you to retrieve information about an Instagram user, including their profile details, profile picture, followers, and people following. Additionally, it provides options to save the output to a file and includes enhancements such as progress indicators, interactive prompts, and colored output.</description>
+    </item>
+  </channel>
+</rss>
