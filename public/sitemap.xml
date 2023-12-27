@@ -3,78 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://noobosaurus-r3x.github.io/tags/articles/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://noobosaurus-r3x.github.io/categories/articles/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/categories/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/chatgpt/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/cheat-sheets/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/categories/cheat-sheets/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://noobosaurus-r3x.github.io/tags/bash/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <loc>https://noobosaurus-r3x.github.io/categories/</loc>
   </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/python/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <loc>https://noobosaurus-r3x.github.io/tags/chatgpt/</loc>
   </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/tools/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <loc>https://noobosaurus-r3x.github.io/tags/cheat-sheets/</loc>
   </url><url>
-    <loc>https://noobosaurus-r3x.github.io/categories/tools/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/wordlister/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/ffuftree/</loc>
-    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/redflagger/</loc>
-    <lastmod>2023-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/tags/osint/</loc>
-    <lastmod>2023-06-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/osintagram/</loc>
-    <lastmod>2023-06-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://noobosaurus-r3x.github.io/posts/johnzipper/</loc>
-    <lastmod>2023-06-18T00:00:00+00:00</lastmod>
+    <loc>https://noobosaurus-r3x.github.io/categories/cheat-sheets/</loc>
   </url><url>
     <loc>https://noobosaurus-r3x.github.io/posts/crawwwler/</loc>
-    <lastmod>2023-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/ffuftree/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/johnzipper/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/tags/osint/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/osintagram/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/tags/python/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/redflagger/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/tags/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/tags/tools/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/categories/tools/</loc>
+  </url><url>
+    <loc>https://noobosaurus-r3x.github.io/posts/wordlister/</loc>
   </url>
 </urlset>

@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Hydra Cheat Sheet"
-date = "2023-07-18"
+date = "2023-07-18 11:12"
 description = "Hydra Cheat Sheet"
 type = [
     "posts"

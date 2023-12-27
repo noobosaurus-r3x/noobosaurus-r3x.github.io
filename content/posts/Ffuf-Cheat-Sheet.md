@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Ffuf Cheat Sheet"
-date = "2023-07-18"
+date = "2023-07-18 12:58"
 description = "Ffuf Cheat Sheet"
 type = [
     "posts"
