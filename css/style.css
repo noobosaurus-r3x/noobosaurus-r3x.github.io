@@ -13,10 +13,10 @@ html {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bgcolor: rgb(21, 22, 24);
-        --fontcolor: rgb(108, 109, 109);
-        --linkcolor: rgb(78, 200, 216);
-        --visitedcolor: #9769bd;
+        --bgcolor: rgb(28, 30, 32);
+        --fontcolor: rgb(135, 136, 136);
+        --linkcolor: #40b928;
+        --visitedcolor: #40b928;
         --precolor: #fff;
         --prebgcolor: #383838;
     }
