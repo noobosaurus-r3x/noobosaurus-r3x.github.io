@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Johnzipper"
-date = "2023-06-18 22:01"
+date = "2023-06-18"
 description = "zip2john automation"
 type = [
     "posts"

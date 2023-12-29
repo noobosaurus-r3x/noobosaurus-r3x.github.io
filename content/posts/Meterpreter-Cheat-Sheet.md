@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Meterpreter Cheat Sheet"
-date = "2023-07-18 21:23"
+date = "2023-07-18"
 description = "Meterpreter Cheat Sheet"
 type = [
     "posts"

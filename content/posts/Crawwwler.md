@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Crawwwler"
-date = "2023-06-09 15:32"
+date = "2023-06-09"
 description = "Simple Web Crawler"
 type = [
     "posts"
