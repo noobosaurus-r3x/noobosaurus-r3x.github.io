@@ -6,83 +6,84 @@
     <description>Recent content in Posts on Nooblogaurus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://noobosaurus-r3x.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Crawwwler</title>
-      <link>https://noobosaurus-r3x.github.io/posts/crawwwler/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/crawwwler/</guid>
-      <description>Web Crawler Bash Script This script is a simple web crawler written in Bash. It takes a URL as an argument, downloads the HTML of the page, extracts all the links, and checks the HTTP status code for each link. It then prints the URL and its HTTP status code, with URLs returning a 200 status code highlighted in green and all others in red. #!/bin/bash usage() { echo &amp;#34;Usage: $0 -u URL&amp;#34; exit 1 } while getopts u: flag do case &amp;#34;${flag}&amp;#34; in u) url=${OPTARG};; *) usage;; esac done if [ -z &amp;#34;$url&amp;#34; ]; then usage fi IMAGE=&amp;#34; +-+-+-+-+-+-+-+-+-+-+-+-+ |c|r|a|w|w|w|l|e|r|.</description>
-    </item>
     <item>
       <title>Evil Sourcer</title>
       <link>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/evil-sourcer/</guid>
       <description>Une Porte Dérobée pour des Attaques Avancées - Introduction&#xA;Étant un grand utilisateur de chatGPT, il m&amp;rsquo;arrive fréquemment de creuser dans les détails des nouvelles fonctionnalités. Récemment, j&amp;rsquo;ai découvert un vecteur d&amp;rsquo;attaque utilisant les modèles GPT personnalisés qui offre des possibilités d&amp;rsquo;exploitation multiples et inquiétantes. Je souhaite partager cette découverte pour sensibiliser la communauté à ce potentiel de menace.&#xA;- Découverte de la Faille&#xA;Depuis quelques semaines, nous avons la possibilité de créer nos propres gpt, en leur donnant des instructions précises et nous avons aussi la possibilité de feed notre gpt perso avec des bases de données de notre choix.</description>
     </item>
     <item>
-      <title>Ffuf Cheat Sheet</title>
-      <link>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</guid>
-      <description>Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &amp;#34;Host: FUZZ&amp;#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &amp;#34;username=admin\&amp;amp;password=FUZZ&amp;#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.</description>
-    </item>
-    <item>
-      <title>ffutree</title>
-      <link>https://noobosaurus-r3x.github.io/posts/ffuftree/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/ffuftree/</guid>
-      <description>ffuftree : a Directory Tree Builder for ffuf Output This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output. Requirements Python 3.x colorama Installation Clone the repository to your local machine: git clone https://github.com/noobosaurus-r3x/ffuftree cd ffuftree Install the required dependencies: pip install colorama Usage To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output.</description>
-    </item>
-    <item>
-      <title>Flask of Cookies</title>
-      <link>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</guid>
-      <description>Flask Of Cookies - Encode/Decode Flask Cookies Flask Of Cookies is a Python script that allows you to encode and decode Flask session cookies. It provides a command-line interface for encoding and decoding session cookies with or without a secret key. inspired by the flask-session-cookie-manager project by Wilson Sumanang and Alexandre ZANNI.&#xA;Features Encode a Flask session cookie using a secret key and session cookie structure. Decode a Flask session cookie with or without a secret key.</description>
-    </item>
-    <item>
       <title>Hydra Cheat Sheet</title>
       <link>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jul 2023 20:36:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</guid>
       <description>Basic syntax : hydra [options] &amp;lt;IP&amp;gt; &amp;lt;protocole&amp;gt; Some flags : -h Show help menu&#xA;-l &amp;lt;username&amp;gt; Username/login&#xA;-L &amp;lt;wordlist&amp;gt; Usernames/login wordlist&#xA;-p &amp;lt;password&amp;gt; Password&#xA;-P &amp;lt;wordlist&amp;gt; Passwords wordlist&#xA;-s &amp;lt;PORT&amp;gt; Specify port&#xA;-f Stop bruteforce as soon as username and password are found&#xA;-R Restore previous session&#xA;-t &amp;lt;number&amp;gt; Number of threads&#xA;-V Verbosity&#xA;Some protocols : SSH, FTP, POP3, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-HEAD, HTTP-POST, HTTP-GET, IMAP, SMB, SMTP, MySQL, etc&amp;hellip;</description>
     </item>
     <item>
-      <title>Johnzipper</title>
-      <link>https://noobosaurus-r3x.github.io/posts/johnzipper/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/johnzipper/</guid>
-      <description>Just a simple bash script to automate the process of cracking a zip file using zip2john and john the ripper. #!/bin/bash # Check if the zip file name is provided as an argument if [ -z &amp;#34;$1&amp;#34; ]; then echo &amp;#34;Please provide the name of the zip file as an argument.&amp;#34; exit 1 fi zip_file=&amp;#34;$1&amp;#34; hash_file=&amp;#34;pass.hash&amp;#34; password_list=&amp;#34;/usr/share/wordlists/rockyou.txt&amp;#34; # Run zip2john to extract the hash zip2john &amp;#34;$zip_file&amp;#34; &amp;gt; &amp;#34;$hash_file&amp;#34; # Check if the hash file was successfully created if [ !</description>
+      <title>Ffuf Cheat Sheet</title>
+      <link>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</guid>
+      <description>Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &amp;#34;Host: FUZZ&amp;#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &amp;#34;username=admin\&amp;amp;password=FUZZ&amp;#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.</description>
     </item>
     <item>
       <title>Meterpreter Cheat Sheet</title>
       <link>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</guid>
       <description> Basic Commands help: Display a list of available commands sysinfo: Display system information, including OS and hostname ps: List running processes kill: Kill a process by PID migrate: Migrate meterpreter to a new process rev2self: Revert the current process to its original state File System Commands ls: List files in the current directory cd: Change the current directory pwd: Display the current directory cat: Display the contents of a file download: Download a file from the target system upload: Upload a file to the target system Network Commands ipconfig: Display network configuration information route: Display the routing table netstat: Display active network connections portfwd: Forward a local port to a remote service getsockname: Display the socket name for a given connection User Management Commands getuid: Display the user ID of the current user ps: List running processes and their owner getprivs: Display the privileges of the current user getsystem: Attempt to escalate privileges to SYSTEM level Persistence Commands persistence: Enable meterpreter persistence on the target system run: Execute a script or command on startup Shell Commands shell: Open a command prompt on the target system execute: Execute a command on the target system background: Background the current session Ctrl+Z: Suspend the current session Other Commands use: Load a meterpreter extension run: Execute a script or command within an extension keyscan_start: Start logging keystrokes on the target system keyscan_dump: Dump the logged keystrokes screenshot: Take a screenshot of the desktop on the target system webcam_list: List available webcams on the target system webcam_snap: Take a snapshot from a webcam on the target system hashdump: Dump the password hashes from the target system timestomp: Modify the timestamp of a file on the target system </description>
     </item>
     <item>
-      <title>Osintagram</title>
-      <link>https://noobosaurus-r3x.github.io/posts/osintagram/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/osintagram/</guid>
-      <description>osintagram Osintagram is a Python script inspired by Palenath&amp;rsquo;s Toutatis script.&#xA;I worked by adding a few options and rewriting his code. It is obviously not perfect but I thought it would be cool to share it anyway.&#xA;That script allows you to retrieve information about an Instagram user, including their profile details, profile picture, followers, and people following. Additionally, it provides options to save the output to a file and includes enhancements such as progress indicators, interactive prompts, and colored output.</description>
-    </item>
-    <item>
-      <title>RedFlagger</title>
-      <link>https://noobosaurus-r3x.github.io/posts/redflagger/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/redflagger/</guid>
-      <description>RedFlagger is a bash script designed to download and aggregate reports from &amp;lsquo;https://dl.red.flag.domains/daily/&#39; based on user-specified conditions.&#xA;It is inspired by NewRedflag, a python script written by lil-doudou.&#xA;https://github.com/lil-doudou/NewRedflag Usage ./redflagger.sh [--latest|--days num] [--all] [--output filename]&#xA;Options --latest or -l: Downloads the report from 1 day ago. --days num or -d num: Downloads the report from &amp;rsquo;num&amp;rsquo; days ago. --all or -a: Downloads all available reports. --output filename or -o filename: Specifies the output file to store the downloaded reports.</description>
+      <title>Flask of Cookies</title>
+      <link>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/flask-of-cookies/</guid>
+      <description>Flask Of Cookies - Encode/Decode Flask Cookies Flask Of Cookies is a Python script that allows you to encode and decode Flask session cookies. It provides a command-line interface for encoding and decoding session cookies with or without a secret key. inspired by the flask-session-cookie-manager project by Wilson Sumanang and Alexandre ZANNI.&#xA;Features Encode a Flask session cookie using a secret key and session cookie structure. Decode a Flask session cookie with or without a secret key.</description>
     </item>
     <item>
       <title>Wordlister</title>
       <link>https://noobosaurus-r3x.github.io/posts/wordlister/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/wordlister/</guid>
       <description>This script generates a wordlist from one or more text files by extracting and sorting unique words.&#xA;Usage Copy and paste that small bash script and name it wordlister.sh #!/bin/bash # Check if text files were provided as arguments if [ $# -eq 0 ]; then echo &amp;#34;Usage: $0 &amp;lt;text_file1&amp;gt; [&amp;lt;text_file2&amp;gt; ...]&amp;#34; exit 1 fi # Create a wordlist file wordlist=&amp;#34;wordlist.txt&amp;#34; # Concatenate the contents of all text files combined_text=$(cat &amp;#34;$@&amp;#34;) # Extract the words from the combined text words=$(echo &amp;#34;$combined_text&amp;#34; | tr -c &amp;#39;[:alnum:]&amp;#39; &amp;#39;\n&amp;#39; | tr &amp;#39;[:upper:]&amp;#39; &amp;#39;[:lower:]&amp;#39;) # Remove duplicates and sort the words sorted_words=$(echo &amp;#34;$words&amp;#34; | sort -u) # Write the words to the wordlist file echo &amp;#34;$sorted_words&amp;#34; &amp;gt; &amp;#34;$wordlist&amp;#34; # Count the number of words in the wordlist file word_count=$(wc -l &amp;lt; &amp;#34;$wordlist&amp;#34;) echo &amp;#34;Created wordlist with $word_count words&amp;#34; Make the script executable: chmod +x wordlister.</description>
+    </item>
+    <item>
+      <title>ffutree</title>
+      <link>https://noobosaurus-r3x.github.io/posts/ffuftree/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/ffuftree/</guid>
+      <description>ffuftree : a Directory Tree Builder for ffuf Output This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output. Requirements Python 3.x colorama Installation Clone the repository to your local machine: git clone https://github.com/noobosaurus-r3x/ffuftree cd ffuftree Install the required dependencies: pip install colorama Usage To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output.</description>
+    </item>
+    <item>
+      <title>RedFlagger</title>
+      <link>https://noobosaurus-r3x.github.io/posts/redflagger/</link>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/redflagger/</guid>
+      <description>RedFlagger is a bash script designed to download and aggregate reports from &amp;lsquo;https://dl.red.flag.domains/daily/&#39; based on user-specified conditions.&#xA;It is inspired by NewRedflag, a python script written by lil-doudou.&#xA;https://github.com/lil-doudou/NewRedflag Usage ./redflagger.sh [--latest|--days num] [--all] [--output filename]&#xA;Options --latest or -l: Downloads the report from 1 day ago. --days num or -d num: Downloads the report from &amp;rsquo;num&amp;rsquo; days ago. --all or -a: Downloads all available reports. --output filename or -o filename: Specifies the output file to store the downloaded reports.</description>
+    </item>
+    <item>
+      <title>Osintagram</title>
+      <link>https://noobosaurus-r3x.github.io/posts/osintagram/</link>
+      <pubDate>Sat, 24 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/osintagram/</guid>
+      <description>osintagram Osintagram is a Python script inspired by Palenath&amp;rsquo;s Toutatis script.&#xA;I worked by adding a few options and rewriting his code. It is obviously not perfect but I thought it would be cool to share it anyway.&#xA;That script allows you to retrieve information about an Instagram user, including their profile details, profile picture, followers, and people following. Additionally, it provides options to save the output to a file and includes enhancements such as progress indicators, interactive prompts, and colored output.</description>
+    </item>
+    <item>
+      <title>Johnzipper</title>
+      <link>https://noobosaurus-r3x.github.io/posts/johnzipper/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/johnzipper/</guid>
+      <description>Just a simple bash script to automate the process of cracking a zip file using zip2john and john the ripper. #!/bin/bash # Check if the zip file name is provided as an argument if [ -z &amp;#34;$1&amp;#34; ]; then echo &amp;#34;Please provide the name of the zip file as an argument.&amp;#34; exit 1 fi zip_file=&amp;#34;$1&amp;#34; hash_file=&amp;#34;pass.hash&amp;#34; password_list=&amp;#34;/usr/share/wordlists/rockyou.txt&amp;#34; # Run zip2john to extract the hash zip2john &amp;#34;$zip_file&amp;#34; &amp;gt; &amp;#34;$hash_file&amp;#34; # Check if the hash file was successfully created if [ !</description>
+    </item>
+    <item>
+      <title>Crawwwler</title>
+      <link>https://noobosaurus-r3x.github.io/posts/crawwwler/</link>
+      <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/crawwwler/</guid>
+      <description>Web Crawler Bash Script This script is a simple web crawler written in Bash. It takes a URL as an argument, downloads the HTML of the page, extracts all the links, and checks the HTTP status code for each link. It then prints the URL and its HTTP status code, with URLs returning a 200 status code highlighted in green and all others in red. #!/bin/bash usage() { echo &amp;#34;Usage: $0 -u URL&amp;#34; exit 1 } while getopts u: flag do case &amp;#34;${flag}&amp;#34; in u) url=${OPTARG};; *) usage;; esac done if [ -z &amp;#34;$url&amp;#34; ]; then usage fi IMAGE=&amp;#34; +-+-+-+-+-+-+-+-+-+-+-+-+ |c|r|a|w|w|w|l|e|r|.</description>
     </item>
   </channel>
 </rss>

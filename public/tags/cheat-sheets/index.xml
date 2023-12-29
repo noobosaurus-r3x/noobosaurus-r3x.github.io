@@ -6,25 +6,26 @@
     <description>Recent content in cheat-sheets on Nooblogaurus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jul 2023 20:36:00 +0000</lastBuildDate>
     <atom:link href="https://noobosaurus-r3x.github.io/tags/cheat-sheets/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ffuf Cheat Sheet</title>
-      <link>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</guid>
-      <description>Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &amp;#34;Host: FUZZ&amp;#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &amp;#34;username=admin\&amp;amp;password=FUZZ&amp;#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.</description>
-    </item>
     <item>
       <title>Hydra Cheat Sheet</title>
       <link>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jul 2023 20:36:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/</guid>
       <description>Basic syntax : hydra [options] &amp;lt;IP&amp;gt; &amp;lt;protocole&amp;gt; Some flags : -h Show help menu&#xA;-l &amp;lt;username&amp;gt; Username/login&#xA;-L &amp;lt;wordlist&amp;gt; Usernames/login wordlist&#xA;-p &amp;lt;password&amp;gt; Password&#xA;-P &amp;lt;wordlist&amp;gt; Passwords wordlist&#xA;-s &amp;lt;PORT&amp;gt; Specify port&#xA;-f Stop bruteforce as soon as username and password are found&#xA;-R Restore previous session&#xA;-t &amp;lt;number&amp;gt; Number of threads&#xA;-V Verbosity&#xA;Some protocols : SSH, FTP, POP3, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-HEAD, HTTP-POST, HTTP-GET, IMAP, SMB, SMTP, MySQL, etc&amp;hellip;</description>
     </item>
     <item>
+      <title>Ffuf Cheat Sheet</title>
+      <link>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/</guid>
+      <description>Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &amp;#34;Host: FUZZ&amp;#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &amp;#34;username=admin\&amp;amp;password=FUZZ&amp;#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.</description>
+    </item>
+    <item>
       <title>Meterpreter Cheat Sheet</title>
       <link>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
       <guid>https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/</guid>
       <description> Basic Commands help: Display a list of available commands sysinfo: Display system information, including OS and hostname ps: List running processes kill: Kill a process by PID migrate: Migrate meterpreter to a new process rev2self: Revert the current process to its original state File System Commands ls: List files in the current directory cd: Change the current directory pwd: Display the current directory cat: Display the contents of a file download: Download a file from the target system upload: Upload a file to the target system Network Commands ipconfig: Display network configuration information route: Display the routing table netstat: Display active network connections portfwd: Forward a local port to a remote service getsockname: Display the socket name for a given connection User Management Commands getuid: Display the user ID of the current user ps: List running processes and their owner getprivs: Display the privileges of the current user getsystem: Attempt to escalate privileges to SYSTEM level Persistence Commands persistence: Enable meterpreter persistence on the target system run: Execute a script or command on startup Shell Commands shell: Open a command prompt on the target system execute: Execute a command on the target system background: Background the current session Ctrl+Z: Suspend the current session Other Commands use: Load a meterpreter extension run: Execute a script or command within an extension keyscan_start: Start logging keystrokes on the target system keyscan_dump: Dump the logged keystrokes screenshot: Take a screenshot of the desktop on the target system webcam_list: List available webcams on the target system webcam_snap: Take a snapshot from a webcam on the target system hashdump: Dump the password hashes from the target system timestomp: Modify the timestamp of a file on the target system </description>
     </item>
