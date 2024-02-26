@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Osintagram"
-date = "2023-06-24"
+date = "2023-06-24T23:51:00Z"
 description = "retrieve infos from user on Instagram"
 type = [
     "posts"

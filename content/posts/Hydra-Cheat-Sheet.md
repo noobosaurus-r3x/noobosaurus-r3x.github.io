@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Hydra Cheat Sheet"
-date = "2023-07-18T20:36:00Z"
+date = "2023-07-18T01:31:00Z"
 description = "Hydra Cheat Sheet"
 type = [
     "posts"
@@ -16,7 +16,7 @@ tags = [
 ---
 # **Basic syntax :**
 ```bash
-hydra [options] <IP> <protocole>
+hydra [options] <IP> <protocole> 
 ```
 ---
 ## Some flags :

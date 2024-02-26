@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "RedFlagger"
-date = "2023-06-25"
+date = "2023-06-25T22:16:00Z"
 description = "Customizable Red Flag Reports Download Script"
 type = [
     "posts"

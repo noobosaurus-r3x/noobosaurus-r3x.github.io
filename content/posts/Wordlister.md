@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Wordlister"
-date = "2023-06-29"
+date = "2023-06-29T01:39:00Z"
 description = "wordlist generator"
 type = [
     "posts"

@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Evil Sourcer"
-date = "2023-12-01"
+date = "2023-12-01T22:46:00Z"
 description = "Exploitation des Modèles GPT Personnalisés"
 type = [
     "posts"

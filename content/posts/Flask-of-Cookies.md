@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "Flask of Cookies"
-date = "2023-06-29"
+date = "2023-06-29T23:43:00Z"
 description = "Encode and decode Flask session cookies"
 type = [
     "posts"

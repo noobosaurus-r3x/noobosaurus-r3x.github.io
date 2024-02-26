@@ -1,7 +1,7 @@
 +++
 author = "Noobosaurus R3x"
 title = "ffutree"
-date = "2023-06-25"
+date = "2023-06-25T20:36:00Z"
 description = "Tree view of ffuf output"
 type = [
     "posts"
