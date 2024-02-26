@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.121.1">
+	<meta name="generator" content="Hugo 0.111.3">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,6 @@
 </head>
 <body>
 	<header>
-	
 	==================<br>
 	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
 	==================
@@ -42,7 +41,7 @@
 		
 			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/evil-sourcer/">Evil Sourcer</a></h1>
-	<b><time>01.12.2023 00:00</time></b>
+	<b><time>01.12.2023 22:46</time></b>
 	
 	<a href="/tags/chatgpt">chatGPT</a>
 	
@@ -61,17 +60,13 @@ Depuis quelques semaines, nous avons la possibilité de créer nos propres gpt, 
 
 		
 			<article>
-	<h1><a href="https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></h1>
-	<b><time>18.07.2023 00:00</time></b>
+	<h1><a href="https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></h1>
+	<b><time>18.07.2023 20:57</time></b>
 	
 	<a href="/tags/cheat-sheets">cheat-sheets</a>
 	
-	<a href="/tags/articles">articles</a>
-	
 	<div>
-		Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &#34;Host: FUZZ&#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &#34;username=admin\&amp;password=FUZZ&#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.
-		
-			<a href="https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/">Read more...</a>
+		 Basic Commands help: Display a list of available commands sysinfo: Display system information, including OS and hostname ps: List running processes kill: Kill a process by PID migrate: Migrate meterpreter to a new process rev2self: Revert the current process to its original state File System Commands ls: List files in the current directory cd: Change the current directory pwd: Display the current directory cat: Display the contents of a file download: Download a file from the target system upload: Upload a file to the target system Network Commands ipconfig: Display network configuration information route: Display the routing table netstat: Display active network connections portfwd: Forward a local port to a remote service getsockname: Display the socket name for a given connection User Management Commands getuid: Display the user ID of the current user ps: List running processes and their owner getprivs: Display the privileges of the current user getsystem: Attempt to escalate privileges to SYSTEM level Persistence Commands persistence: Enable meterpreter persistence on the target system run: Execute a script or command on startup Shell Commands shell: Open a command prompt on the target system execute: Execute a command on the target system background: Background the current session Ctrl+Z: Suspend the current session Other Commands use: Load a meterpreter extension run: Execute a script or command within an extension keyscan_start: Start logging keystrokes on the target system keyscan_dump: Dump the logged keystrokes screenshot: Take a screenshot of the desktop on the target system webcam_list: List available webcams on the target system webcam_snap: Take a snapshot from a webcam on the target system hashdump: Dump the password hashes from the target system timestomp: Modify the timestamp of a file on the target system 
 		
 	</div>
 </article>
@@ -79,11 +74,9 @@ Depuis quelques semaines, nous avons la possibilité de créer nos propres gpt, 
 		
 			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></h1>
-	<b><time>18.07.2023 00:00</time></b>
+	<b><time>18.07.2023 01:31</time></b>
 	
 	<a href="/tags/cheat-sheets">cheat-sheets</a>
-	
-	<a href="/tags/articles">articles</a>
 	
 	<div>
 		Basic syntax : hydra [options] &lt;IP&gt; &lt;protocole&gt; Some flags : -h Show help menu
@@ -105,15 +98,15 @@ Some protocols : SSH, FTP, POP3, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-HEAD, HTTP-
 
 		
 			<article>
-	<h1><a href="https://noobosaurus-r3x.github.io/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></h1>
-	<b><time>18.07.2023 00:00</time></b>
+	<h1><a href="https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></h1>
+	<b><time>18.07.2023 00:54</time></b>
 	
 	<a href="/tags/cheat-sheets">cheat-sheets</a>
 	
-	<a href="/tags/articles">articles</a>
-	
 	<div>
-		 Basic Commands help: Display a list of available commands sysinfo: Display system information, including OS and hostname ps: List running processes kill: Kill a process by PID migrate: Migrate meterpreter to a new process rev2self: Revert the current process to its original state File System Commands ls: List files in the current directory cd: Change the current directory pwd: Display the current directory cat: Display the contents of a file download: Download a file from the target system upload: Upload a file to the target system Network Commands ipconfig: Display network configuration information route: Display the routing table netstat: Display active network connections portfwd: Forward a local port to a remote service getsockname: Display the socket name for a given connection User Management Commands getuid: Display the user ID of the current user ps: List running processes and their owner getprivs: Display the privileges of the current user getsystem: Attempt to escalate privileges to SYSTEM level Persistence Commands persistence: Enable meterpreter persistence on the target system run: Execute a script or command on startup Shell Commands shell: Open a command prompt on the target system execute: Execute a command on the target system background: Background the current session Ctrl+Z: Suspend the current session Other Commands use: Load a meterpreter extension run: Execute a script or command within an extension keyscan_start: Start logging keystrokes on the target system keyscan_dump: Dump the logged keystrokes screenshot: Take a screenshot of the desktop on the target system webcam_list: List available webcams on the target system webcam_snap: Take a snapshot from a webcam on the target system hashdump: Dump the password hashes from the target system timestomp: Modify the timestamp of a file on the target system 
+		Basic Syntax ffuf -c -w path/to/wordlist -u https://target_url/FUZZ #Filter any response with a content size of 4242 bytes ffuf -w /path/to/vhost/wordlist -uhttps://target_url/ -H &#34;Host: FUZZ&#34; -fs 4242 #Filter any response with a 401 status response ffuf -w /path/to/values.txt -u https://target_url/script.php?valid_name=FUZZ -fc 401 #Filter 401 status and fuzz the password in POST request ffuf -w /path/to/postdata.txt -X POST -d &#34;username=admin\&amp;password=FUZZ&#34; -u https://target_url/login.php -fc 401 Common flags -c: Colorize the output -maxtime: Maximum time in seconds for the process -p: Delay in seconds between requests (e.
+		
+			<a href="https://noobosaurus-r3x.github.io/posts/ffuf-cheat-sheet/">Read more...</a>
 		
 	</div>
 </article>
@@ -121,11 +114,11 @@ Some protocols : SSH, FTP, POP3, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-HEAD, HTTP-
 		
 			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/flask-of-cookies/">Flask of Cookies</a></h1>
-	<b><time>29.06.2023 00:00</time></b>
+	<b><time>29.06.2023 23:43</time></b>
 	
 	<a href="/tags/tools">tools</a>
 	
-	<a href="/tags/articles">articles</a>
+	<a href="/tags/python">python</a>
 	
 	<div>
 		Flask Of Cookies - Encode/Decode Flask Cookies Flask Of Cookies is a Python script that allows you to encode and decode Flask session cookies. It provides a command-line interface for encoding and decoding session cookies with or without a secret key. inspired by the flask-session-cookie-manager project by Wilson Sumanang and Alexandre ZANNI.
@@ -139,11 +132,11 @@ Features Encode a Flask session cookie using a secret key and session cookie str
 		
 			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/wordlister/">Wordlister</a></h1>
-	<b><time>29.06.2023 00:00</time></b>
+	<b><time>29.06.2023 01:39</time></b>
 	
 	<a href="/tags/tools">tools</a>
 	
-	<a href="/tags/articles">articles</a>
+	<a href="/tags/bash">bash</a>
 	
 	<div>
 		This script generates a wordlist from one or more text files by extracting and sorting unique words.
@@ -156,29 +149,12 @@ Usage Copy and paste that small bash script and name it wordlister.sh #!/bin/bas
 
 		
 			<article>
-	<h1><a href="https://noobosaurus-r3x.github.io/posts/ffuftree/">ffutree</a></h1>
-	<b><time>25.06.2023 00:00</time></b>
-	
-	<a href="/tags/tools">tools</a>
-	
-	<a href="/tags/articles">articles</a>
-	
-	<div>
-		ffuftree : a Directory Tree Builder for ffuf Output This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output. Requirements Python 3.x colorama Installation Clone the repository to your local machine: git clone https://github.com/noobosaurus-r3x/ffuftree cd ffuftree Install the required dependencies: pip install colorama Usage To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output.
-		
-			<a href="https://noobosaurus-r3x.github.io/posts/ffuftree/">Read more...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/redflagger/">RedFlagger</a></h1>
-	<b><time>25.06.2023 00:00</time></b>
+	<b><time>25.06.2023 22:16</time></b>
 	
 	<a href="/tags/tools">tools</a>
 	
-	<a href="/tags/articles">articles</a>
+	<a href="/tags/bash">bash</a>
 	
 	<div>
 		RedFlagger is a bash script designed to download and aggregate reports from &lsquo;https://dl.red.flag.domains/daily/' based on user-specified conditions.
@@ -193,12 +169,31 @@ Options --latest or -l: Downloads the report from 1 day ago. --days num or -d nu
 
 		
 			<article>
-	<h1><a href="https://noobosaurus-r3x.github.io/posts/osintagram/">Osintagram</a></h1>
-	<b><time>24.06.2023 00:00</time></b>
+	<h1><a href="https://noobosaurus-r3x.github.io/posts/ffuftree/">ffutree</a></h1>
+	<b><time>25.06.2023 20:36</time></b>
 	
 	<a href="/tags/tools">tools</a>
 	
-	<a href="/tags/articles">articles</a>
+	<a href="/tags/python">python</a>
+	
+	<div>
+		ffuftree : a Directory Tree Builder for ffuf Output This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output. Requirements Python 3.x colorama Installation Clone the repository to your local machine: git clone https://github.com/noobosaurus-r3x/ffuftree cd ffuftree Install the required dependencies: pip install colorama Usage To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output.
+		
+			<a href="https://noobosaurus-r3x.github.io/posts/ffuftree/">Read more...</a>
+		
+	</div>
+</article>
+
+		
+			<article>
+	<h1><a href="https://noobosaurus-r3x.github.io/posts/osintagram/">Osintagram</a></h1>
+	<b><time>24.06.2023 23:51</time></b>
+	
+	<a href="/tags/tools">tools</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/osint">osint</a>
 	
 	<div>
 		osintagram Osintagram is a Python script inspired by Palenath&rsquo;s Toutatis script.
@@ -213,11 +208,11 @@ That script allows you to retrieve information about an Instagram user, includin
 		
 			<article>
 	<h1><a href="https://noobosaurus-r3x.github.io/posts/johnzipper/">Johnzipper</a></h1>
-	<b><time>18.06.2023 00:00</time></b>
+	<b><time>18.06.2023 02:11</time></b>
 	
 	<a href="/tags/tools">tools</a>
 	
-	<a href="/tags/articles">articles</a>
+	<a href="/tags/bash">bash</a>
 	
 	<div>
 		Just a simple bash script to automate the process of cracking a zip file using zip2john and john the ripper. #!/bin/bash # Check if the zip file name is provided as an argument if [ -z &#34;$1&#34; ]; then echo &#34;Please provide the name of the zip file as an argument.&#34; exit 1 fi zip_file=&#34;$1&#34; hash_file=&#34;pass.hash&#34; password_list=&#34;/usr/share/wordlists/rockyou.txt&#34; # Run zip2john to extract the hash zip2john &#34;$zip_file&#34; &gt; &#34;$hash_file&#34; # Check if the hash file was successfully created if [ !
@@ -239,12 +234,12 @@ That script allows you to retrieve information about an Instagram user, includin
 	</main>
 
 	<footer>
-	<p>&copy; 2023 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<p>&copy; 2024 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
 	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
 	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
 	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
 	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
-	<a href="https://github.com/noobosaurus-r3"><b>Github</b></a>.
+	<a href="https://github.com/noobosaurus-r3x"><b>Github</b></a>.
 	</p>
 </footer>
 
