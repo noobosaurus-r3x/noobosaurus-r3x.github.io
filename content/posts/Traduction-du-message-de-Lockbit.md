@@ -1,8 +1,8 @@
 +++
 author = "Noobosaurus R3x"
 title = "Lockbit, la traduction de son message"
-date = "2024-27-02T01:15:00Z"
-description = "Simple Web Crawler"
+date = "2024-02-27T01:15:00Z"
+description = "Traduction du message de Lockbit"
 type = [
     "posts"
 ]
@@ -10,8 +10,7 @@ categories = [
     "articles"
 ]
 tags = [
-    "articles",
-    "news"
+    "articles"
 ]
 +++
 
