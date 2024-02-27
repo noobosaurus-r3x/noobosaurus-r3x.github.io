@@ -126,5 +126,15 @@ That script allows you to retrieve information about an Instagram user, includin
       <description>Web Crawler Bash Script This script is a simple web crawler written in Bash. It takes a URL as an argument, downloads the HTML of the page, extracts all the links, and checks the HTTP status code for each link. It then prints the URL and its HTTP status code, with URLs returning a 200 status code highlighted in green and all others in red. #!/bin/bash usage() { echo &amp;#34;Usage: $0 -u URL&amp;#34; exit 1 } while getopts u: flag do case &amp;#34;${flag}&amp;#34; in u) url=${OPTARG};; *) usage;; esac done if [ -z &amp;#34;$url&amp;#34; ]; then usage fi IMAGE=&amp;#34; +-+-+-+-+-+-+-+-+-+-+-+-+ |c|r|a|w|w|w|l|e|r|.</description>
     </item>
     
+    <item>
+      <title>Lockbit, la traduction de son message</title>
+      <link>https://noobosaurus-r3x.github.io/posts/traduction-du-message-de-lockbit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://noobosaurus-r3x.github.io/posts/traduction-du-message-de-lockbit/</guid>
+      <description>Ce qui s&amp;rsquo;est passé.
+Le 19 février 2024, des tests d’intrusion ont eu lieu sur deux de mes serveurs. À 06:39 UTC, j&amp;rsquo;ai trouvé une erreur 502 Bad Gateway sur le site, j&amp;rsquo;ai redémarré nginx - rien n&amp;rsquo;a changé, j&amp;rsquo;ai redémarré mysql - rien n&amp;rsquo;a changé, j&amp;rsquo;ai redémarré PHP - le site a fonctionné. Je n&amp;rsquo;y ai pas prêté beaucoup d&amp;rsquo;attention, car après avoir nagé dans l&amp;rsquo;argent pendant 5 ans, je suis devenu très paresseux et j&amp;rsquo;ai continué à me promener sur un yacht avec des filles à nichons.</description>
+    </item>
+    
   </channel>
 </rss>

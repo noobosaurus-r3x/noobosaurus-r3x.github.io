@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>news on Nooblogaurus</title>
+    <link>https://noobosaurus-r3x.github.io/tags/news/</link>
+    <description>Recent content in news on Nooblogaurus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://noobosaurus-r3x.github.io/tags/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lockbit, la traduction de son message</title>
+      <link>https://noobosaurus-r3x.github.io/posts/traduction-du-message-de-lockbit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://noobosaurus-r3x.github.io/posts/traduction-du-message-de-lockbit/</guid>
+      <description>Ce qui s&amp;rsquo;est passé.
+Le 19 février 2024, des tests d’intrusion ont eu lieu sur deux de mes serveurs. À 06:39 UTC, j&amp;rsquo;ai trouvé une erreur 502 Bad Gateway sur le site, j&amp;rsquo;ai redémarré nginx - rien n&amp;rsquo;a changé, j&amp;rsquo;ai redémarré mysql - rien n&amp;rsquo;a changé, j&amp;rsquo;ai redémarré PHP - le site a fonctionné. Je n&amp;rsquo;y ai pas prêté beaucoup d&amp;rsquo;attention, car après avoir nagé dans l&amp;rsquo;argent pendant 5 ans, je suis devenu très paresseux et j&amp;rsquo;ai continué à me promener sur un yacht avec des filles à nichons.</description>
+    </item>
+    
+  </channel>
+</rss>
