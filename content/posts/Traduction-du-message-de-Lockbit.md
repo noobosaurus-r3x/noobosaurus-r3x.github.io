@@ -65,52 +65,14 @@ Vous vous demandez pourquoi je travaillerais avec des centaines de millions de d
 Une liste de domaines de blogs de sauvegarde que le FBI n'a pas pu atteindre parce que PHP n'est pas installé sur ces serveurs. 
 
 Ces serveurs hébergent non seulement les entreprises que vous pouvez voir sur le domaine principal, mais aussi de nombreuses entreprises qui ont été remises pour téléchargement manuel, c'est-à-dire des liens qui sont secrets et publiés si l'entreprise refuse de payer la rançon, par exemple :
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/d8103cc7ba967d32a268d5cb3cff5b29/8x8.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/7bbed20cee2fef7f16def020b3690b0f/muellersystems.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/7b20fb8ef3064e45ce4954446cc6e858/boeing.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/c852ee1bccff6830b7316afb016be962/estes-express.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/a38cdf047c11d9a8cdcff00da7f62385/cityofclarksville.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/23f187fabd0681c79f1b0107275bdd27/esser-ps.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/8c877f8eae9e950552605a44f0485835/heinrichseegers.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/0fa4f7c543ddc8203f772322a2b0203e/hotelemc2.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/46216a24a00ccd4cdc6d96c7c82ebd69/roehr-stolberg.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/ab738d1822d63fa3e81193b75b89fb8b/roth-werkzeugbau.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/dd20772d156397072e50c5ce8af54994/schuett-grundei.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/0b8fe87adbd6a829b1af92bbb482f473/starkpower.de
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/8d1ff2c9e62ae75972b8371b789c8a69/thewalkerschool.org
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/b7f14428465e73416571d7f0ace4e1f8/unitednotions.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/cad65f46efbec2e5f1ab35d1b1d40b34/wombleco.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/2a366160a6eeba8ffb0d21d734148e57/gitiusa.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/70ef5f8ac50d8d7e09ad8c4478cff8e8/Good-Lawyer.com
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/12eee65c430a7f2a3a8317acb68b1303/aei.cc
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/secret/b946864a63e28e9177d4a5fe7834ed1d/carsonteam.com
-http://lockbit7z2mmiz3ryxafn5kapbvbbiywsxwovasfkgf5dqqp5kxlajad.onion/secret/5c60836b0eccdc9845b9c9e278e0033a/dena.de/
+[REDACTED]
 Ces entreprises et bien d'autres ont été sauvées, elles seront publiées plus tard dans un nouveau blog.
 
 Miroirs de blog de sauvegarde, n'importe quel domaine peut être substitué aux liens secrets, au cas où un domaine serait surchargé paer des personnes voulant télécharger les données volées :
-http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion/
-http://lockbit7z2mmiz3ryxafn5kapbvbbiywsxwovasfkgf5dqqp5kxlajad.onion/
-http://lockbit7z2og4jlsmdy7dzty3g42eu3gh2sx2b6ywtvhrjtss7li4fyd.onion/
-http://lockbit7z355oalq4hiy5p7de64l6rsqutwlvydqje56uvevcc57r6qd.onion/
-http://lockbit7z36ynytxwjzuoao46ck7b3753gpedary3qvuizn3iczhe4id.onion/
-http://lockbit7z37ntefjdbjextn6tmdkry4j546ejnru5cejeguitiopvhad.onion/
-http://lockbit7z3azdoxdpqxzliszutufbc2fldagztdu47xyucp25p4xtqad.onion/
-http://lockbit7z3ddvg5vuez2vznt73ljqgwx5tnuqaa2ye7lns742yiv2zyd.onion/
-http://lockbit7z3hv7ev5knxbrhsvv2mmu2rddwqizdz4vwfvxt5izrq6zqqd.onion/
-http://lockbit7z3ujnkhxwahhjduh5me2updvzxewhhc5qvk2snxezoi5drad.onion/
-http://lockbit7z4bsm63m3dagp5xglyacr4z4bwytkvkkwtn6enmuo5fi5iyd.onion/
-http://lockbit7z4cgxvictidwfxpuiov4scdw34nxotmbdjyxpkvkg34mykyd.onion/
-http://lockbit7z4k5zer5fbqi2vdq5sx2vuggatwyqvoodrkhubxftyrvncid.onion/
-http://lockbit7z4ndl6thsct34yd47jrzdkpnfg3acfvpacuccb45pnars2ad.onion/
+[REDACTED]
 
 Nouveaux domaines du blog principal
-http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion/
-http://lockbit3g3ohd3katajf6zaehxz4h4cnhmz5t735zpltywhwpc6oy3id.onion/
-http://lockbit3olp7oetlc4tl5zydnoluphh7fvdt5oa6arcp2757r7xkutid.onion/
-http://lockbit435xk3ki62yun7z5nhwz6jyjdp2c64j5vge536if2eny3gtid.onion/
-http://lockbit4lahhluquhoka3t4spqym2m3dhe66d6lr337glmnlgg2nndad.onion/
-http://lockbit6knrauo3qafoksvl742vieqbujxw7rd6ofzdtapjb4rrawqad.onion/
-http://lockbit7ouvrsdgtojeoj5hvu6bljqtghitekwpdy3b6y62ixtsu5jqd.onion/
+[REDACTED]
 
 Même après le piratage du FBI, les données volées seront publiées sur le blog, il n'y a aucune chance de détruire les données volées sans paiement. Et après avoir introduit une protection maximale sur chaque build de locker, il n'y aura aucune chance de déchiffrement gratuit même pour 2,5 % des entreprises attaquées.
 
