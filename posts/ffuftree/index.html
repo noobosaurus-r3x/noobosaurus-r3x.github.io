@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>ffutree</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	==================<br>
+	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
+	==================
+	<div style="float: right;">Le Blog de Noobosaurus R3x</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>ffutree</h1>
+			<b><time>25.06.2023 20:36</time></b>
+		       
+		           <a href="/tags/tools">tools</a>
+        	       
+		           <a href="/tags/python">python</a>
+        	       
+
+			<div>
+				<h1 id="ffuftree--a-directory-tree-builder-for-ffuf-output">ffuftree : a Directory Tree Builder for ffuf Output</h1>
+<h2 id="this-is-a-python-script-that-builds-a-directory-tree-from-the-json-output-of-the-ffuf-tool-it-parses-the-json-data-extracts-urls-and-their-corresponding-http-status-codes-and-then-prints-the-directory-tree-along-with-the-status-codes-using-colored-output">This is a Python script that builds a directory tree from the JSON output of the ffuf tool. It parses the JSON data, extracts URLs, and their corresponding HTTP status codes, and then prints the directory tree along with the status codes using colored output.</h2>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Python 3.x</li>
+<li>colorama</li>
+</ul>
+<hr>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Clone the repository to your local machine:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/noobosaurus-r3x/ffuftree
+</span></span><span style="display:flex;"><span>cd ffuftree
+</span></span></code></pre></div><ol start="2">
+<li>Install the required dependencies:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install colorama
+</span></span></code></pre></div><hr>
+<h2 id="usage">Usage</h2>
+<p>To use the directory tree builder, you need to provide the path to the JSON file containing the ffuf output. The script will read the file, parse the JSON data, and then print the directory tree with corresponding status codes.</p>
+<p>Run the script using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python ffuftree.py /path/to/ffuf_output.json
+</span></span></code></pre></div><h2 id="replace-pathtoffuf_outputjson-with-the-actual-path-to-your-ffuf-output-json-file">Replace <code>/path/to/ffuf_output.json</code> with the actual path to your ffuf output JSON file.</h2>
+<h2 id="output">Output</h2>
+<p>The directory tree will be printed in the console, showing the hierarchical structure of directories and files, along with their HTTP status codes. The status codes will be colorized to make it easier to identify different status ranges:</p>
+<ul>
+<li>Successful (2xx) responses will be displayed in green.</li>
+<li>Redirects (3xx) will be displayed in yellow.</li>
+<li>Client errors (4xx) will be displayed in red.</li>
+<li>Server errors (5xx) will be displayed in blue.</li>
+</ul>
+<hr>
+<h2 id="example">Example</h2>
+<p>Suppose your <code>ffuf_output.json</code> contains the following data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;results&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://example.com/files/document.txt&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;200&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;example.com&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://example.com/files/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;404&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;example.com&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://example.com/files/music.mp3&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;200&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;example.com&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Running the script with this JSON file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python ffuftree.py ffuf_output.json
+</span></span></code></pre></div><p>will output the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>└── example.com
+</span></span><span style="display:flex;"><span>    ├── files
+</span></span><span style="display:flex;"><span>       ├── document.txt <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       ├── image.jpg <span style="color:#f92672">(</span>Status: 404<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>       └── music.mp3 <span style="color:#f92672">(</span>Status: 200<span style="color:#f92672">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="ffuf">Ffuf</h2>
+<p><a href="https://github.com/ffuf/ffuf">https://github.com/ffuf/ffuf</a></p>
+<h2 id="final-words">Final words</h2>
+<h2 id="i-am-not-a-proper-developper-so-you-might-encounter-some-problems-with-some-outputs-that-is-mainly-an-exercice-but-it-works-pretty-well-here">I am not a proper developper, so you might encounter some problems with some outputs. That is mainly an exercice, but it works pretty well here.</h2>
+<p>If you want to check the file <a href="../../static/files/ffuftree.py">ffuftree.py</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> colorama <span style="color:#f92672">import</span> init, Fore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>init(autoreset<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)  <span style="color:#75715e"># Initialize colorama to work with Windows, macOS, and Linux terminals</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DirectoryTreeBuilder</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>directory_tree <span style="color:#f92672">=</span> defaultdict(dict)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_directory_tree</span>(self, ffuf_output):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(ffuf_output)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> json<span style="color:#f92672">.</span>JSONDecodeError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Invalid JSON data.&#34;</span>) <span style="color:#f92672">from</span> e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(data, dict) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;results&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> data:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Invalid ffuf output format.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> result <span style="color:#f92672">in</span> data[<span style="color:#e6db74">&#34;results&#34;</span>]:
+</span></span><span style="display:flex;"><span>            url <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;url&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            host <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;host&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> url<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;https://&#34;</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            parts <span style="color:#f92672">=</span> url<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;/&#34;</span>)[<span style="color:#ae81ff">3</span>:]  <span style="color:#75715e"># Skip &#34;https:&#34;, &#34;&#34;, and the host</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>_add_path_to_tree(host, parts, result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_add_path_to_tree</span>(self, host, parts, result):
+</span></span><span style="display:flex;"><span>        current_level <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>directory_tree[host]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, part <span style="color:#f92672">in</span> enumerate(parts):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> len(parts) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:  <span style="color:#75715e"># Last part (file or directory)</span>
+</span></span><span style="display:flex;"><span>                status <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;status&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>                color <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_get_status_color(status)
+</span></span><span style="display:flex;"><span>                current_level[part] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;_status&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>color<span style="color:#e6db74">}{</span>status<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>}
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                current_level <span style="color:#f92672">=</span> current_level<span style="color:#f92672">.</span>setdefault(part, {})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_get_status_color</span>(self, status):
+</span></span><span style="display:flex;"><span>        status_code <span style="color:#f92672">=</span> int(status)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">&lt;=</span> status_code <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">300</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Fore<span style="color:#f92672">.</span>GREEN
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#ae81ff">300</span> <span style="color:#f92672">&lt;=</span> status_code <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">400</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Fore<span style="color:#f92672">.</span>YELLOW
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">&lt;=</span> status_code <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">500</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Fore<span style="color:#f92672">.</span>RED
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#ae81ff">500</span> <span style="color:#f92672">&lt;=</span> status_code <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">600</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Fore<span style="color:#f92672">.</span>BLUE
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> Fore<span style="color:#f92672">.</span>RESET
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_directory_tree</span>(self, tree<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, last_item<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> tree <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            tree <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>directory_tree
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        keys <span style="color:#f92672">=</span> sorted(tree<span style="color:#f92672">.</span>keys())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, key <span style="color:#f92672">in</span> enumerate(keys):
+</span></span><span style="display:flex;"><span>            last_item_flag <span style="color:#f92672">=</span> i <span style="color:#f92672">==</span> len(keys) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            symbol <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;└── &#34;</span> <span style="color:#66d9ef">if</span> last_item_flag <span style="color:#f92672">and</span> last_item <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;├── &#34;</span>
+</span></span><span style="display:flex;"><span>            current_path <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>symbol<span style="color:#e6db74">}{</span>key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> isinstance(tree[key], dict) <span style="color:#f92672">and</span> <span style="color:#e6db74">&#34;_status&#34;</span> <span style="color:#f92672">in</span> tree[key]:
+</span></span><span style="display:flex;"><span>                status <span style="color:#f92672">=</span> tree[key][<span style="color:#e6db74">&#34;_status&#34;</span>]
+</span></span><span style="display:flex;"><span>                current_path <span style="color:#f92672">+=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34; (Status: </span><span style="color:#e6db74">{</span>status<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>                tree[key]<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#34;_status&#34;</span>)  <span style="color:#75715e"># Remove the &#34;_status&#34; key from the output</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;    &#34;</span> <span style="color:#f92672">*</span> indent <span style="color:#f92672">+</span> current_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> isinstance(tree[key], dict):
+</span></span><span style="display:flex;"><span>                next_indent <span style="color:#f92672">=</span> indent <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                last_item_child <span style="color:#f92672">=</span> last_item_flag <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> bool(tree[keys[i]])
+</span></span><span style="display:flex;"><span>                self<span style="color:#f92672">.</span>print_directory_tree(tree[key], next_indent, last_item_child)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_ffuf_output</span>(json_file):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(json_file, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">FileNotFoundError</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">FileNotFoundError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: File &#39;</span><span style="color:#e6db74">{</span>json_file<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; not found.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup_logging</span>():
+</span></span><span style="display:flex;"><span>    logging<span style="color:#f92672">.</span>basicConfig(level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Build and print a directory tree from ffuf output.&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;json_file&#34;</span>, type<span style="color:#f92672">=</span>str, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Path to the JSON file containing ffuf output.&#34;</span>)
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        ffuf_output <span style="color:#f92672">=</span> read_ffuf_output(args<span style="color:#f92672">.</span>json_file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        tree_builder <span style="color:#f92672">=</span> DirectoryTreeBuilder()
+</span></span><span style="display:flex;"><span>        tree_builder<span style="color:#f92672">.</span>build_directory_tree(ffuf_output)
+</span></span><span style="display:flex;"><span>        tree_builder<span style="color:#f92672">.</span>print_directory_tree()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logging<span style="color:#f92672">.</span>error(str(e))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    setup_logging()
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><hr>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/traduction-du-message-de-lockbit/">Lockbit, la traduction de son message</a></li>
+				
+				<li><a href="/posts/evil-sourcer/">Evil Sourcer</a></li>
+				
+				<li><a href="/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></li>
+				
+				<li><a href="/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></li>
+				
+				<li><a href="/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
+	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
+	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
+	<a href="https://github.com/noobosaurus-r3x"><b>Github</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

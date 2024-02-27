@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Johnzipper</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	==================<br>
+	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
+	==================
+	<div style="float: right;">Le Blog de Noobosaurus R3x</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Johnzipper</h1>
+			<b><time>18.06.2023 02:11</time></b>
+		       
+		           <a href="/tags/tools">tools</a>
+        	       
+		           <a href="/tags/bash">bash</a>
+        	       
+
+			<div>
+				<h2 id="just-a-simple-bash-script-to-automate-the-process-of-cracking-a-zip-file-using-zip2john-and-john-the-ripper">Just a simple bash script to automate the process of cracking a zip file using zip2john and john the ripper.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the zip file name is provided as an argument</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Please provide the name of the zip file as an argument.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>zip_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>hash_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pass.hash&#34;</span>
+</span></span><span style="display:flex;"><span>password_list<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/share/wordlists/rockyou.txt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run zip2john to extract the hash</span>
+</span></span><span style="display:flex;"><span>zip2john <span style="color:#e6db74">&#34;</span>$zip_file<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$hash_file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the hash file was successfully created</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;</span>$hash_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Failed to create the hash file. Please make sure &#39;zip2john&#39; is installed and accessible.&#34;</span>
+</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run john the ripper to crack the password</span>
+</span></span><span style="display:flex;"><span>john --format<span style="color:#f92672">=</span>PKZIP <span style="color:#e6db74">&#34;</span>$hash_file<span style="color:#e6db74">&#34;</span> --wordlist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$password_list<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the password was cracked</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f <span style="color:#e6db74">&#34;</span>$hash_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Password cracked successfully.&#34;</span>
+</span></span><span style="display:flex;"><span>  john --show <span style="color:#e6db74">&#34;</span>$hash_file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Failed to crack the password. Please try using a different password list or check if &#39;john the ripper&#39; is installed and accessible.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><hr>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/traduction-du-message-de-lockbit/">Lockbit, la traduction de son message</a></li>
+				
+				<li><a href="/posts/evil-sourcer/">Evil Sourcer</a></li>
+				
+				<li><a href="/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></li>
+				
+				<li><a href="/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></li>
+				
+				<li><a href="/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
+	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
+	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
+	<a href="https://github.com/noobosaurus-r3x"><b>Github</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

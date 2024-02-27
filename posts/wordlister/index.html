@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Wordlister</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	==================<br>
+	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
+	==================
+	<div style="float: right;">Le Blog de Noobosaurus R3x</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Wordlister</h1>
+			<b><time>29.06.2023 01:39</time></b>
+		       
+		           <a href="/tags/tools">tools</a>
+        	       
+		           <a href="/tags/bash">bash</a>
+        	       
+
+			<div>
+				<hr>
+<p>This script generates a wordlist from one or more text files by extracting and sorting unique words.</p>
+<hr>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>Copy and paste that small bash script and name it wordlister.sh</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if text files were provided as arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> &lt;text_file1&gt; [&lt;text_file2&gt; ...]&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a wordlist file</span>
+</span></span><span style="display:flex;"><span>wordlist<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wordlist.txt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Concatenate the contents of all text files</span>
+</span></span><span style="display:flex;"><span>combined_text<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract the words from the combined text</span>
+</span></span><span style="display:flex;"><span>words<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$combined_text<span style="color:#e6db74">&#34;</span> | tr -c <span style="color:#e6db74">&#39;[:alnum:]&#39;</span> <span style="color:#e6db74">&#39;\n&#39;</span> | tr <span style="color:#e6db74">&#39;[:upper:]&#39;</span> <span style="color:#e6db74">&#39;[:lower:]&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove duplicates and sort the words</span>
+</span></span><span style="display:flex;"><span>sorted_words<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$words<span style="color:#e6db74">&#34;</span> | sort -u<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Write the words to the wordlist file</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$sorted_words<span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$wordlist<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count the number of words in the wordlist file</span>
+</span></span><span style="display:flex;"><span>word_count<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>wc -l &lt; <span style="color:#e6db74">&#34;</span>$wordlist<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Created wordlist with </span>$word_count<span style="color:#e6db74"> words&#34;</span>
+</span></span></code></pre></div><ol start="2">
+<li>Make the script executable:</li>
+</ol>
+<pre tabindex="0"><code> chmod +x wordlister.sh
+</code></pre><hr>
+<p>Run the script, providing the text files you want to process as arguments:</p>
+<pre tabindex="0"><code>./wordlister.sh file1.txt file2.txt file3.txt
+</code></pre><p>You can specify as many text files as you want, separated by spaces.</p>
+<p>The script will concatenate the contents of all the provided text files, extract the words, remove duplicates, sort them, and save the resulting wordlist in a file called wordlist.txt in the same directory. It will display a message indicating the number of words in the wordlist.</p>
+<hr>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/traduction-du-message-de-lockbit/">Lockbit, la traduction de son message</a></li>
+				
+				<li><a href="/posts/evil-sourcer/">Evil Sourcer</a></li>
+				
+				<li><a href="/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></li>
+				
+				<li><a href="/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></li>
+				
+				<li><a href="/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
+	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
+	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
+	<a href="https://github.com/noobosaurus-r3x"><b>Github</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

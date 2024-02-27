@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Osintagram</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	==================<br>
+	== <a href="https://noobosaurus-r3x.github.io">Nooblogaurus</a> ==<br>
+	==================
+	<div style="float: right;">Le Blog de Noobosaurus R3x</div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Start</b></a>.
+			
+			
+			<a href="/posts/"><b>Posts</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Osintagram</h1>
+			<b><time>24.06.2023 23:51</time></b>
+		       
+		           <a href="/tags/tools">tools</a>
+        	       
+		           <a href="/tags/python">python</a>
+        	       
+		           <a href="/tags/osint">osint</a>
+        	       
+
+			<div>
+				<h1 id="osintagram">osintagram</h1>
+<p>Osintagram is a Python script inspired by Palenath&rsquo;s <a href="https://github.com/megadose/toutatis">Toutatis</a> script.</p>
+<p>I worked by adding a few options and rewriting his code. It is obviously not perfect but I thought it would be cool to share it anyway.</p>
+<p>That script allows you to retrieve information about an Instagram user, including their profile details, profile picture, followers, and people following. Additionally, it provides options to save the output to a file and includes enhancements such as progress indicators, interactive prompts, and colored output.</p>
+<p>ChatGPT was used during the process.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Retrieve user information including username, full name, verification status, follower count, following count, number of posts, biography, website, and more.</li>
+<li>Retrieve recent posts and their URLs and captions.</li>
+<li>Retrieve followers and their usernames and full names.</li>
+<li>Retrieve following accounts and their usernames and full names.</li>
+<li>Retrieve profile picture.</li>
+<li>Save the output to a file.</li>
+<li>Progress indicators for follower and following retrieval.</li>
+<li>Interactive prompts for follower and following retrieval.</li>
+<li>Colored output for improved readability and visual appeal.</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt
+</span></span></code></pre></div><p>or</p>
+<ul>
+<li>Python 3.x</li>
+<li>Requests argparse (<code>pip install argparse</code>)</li>
+<li>Requests library (<code>pip install requests</code>)</li>
+<li>Phonenumbers library (<code>pip install phonenumbers</code>)</li>
+<li>Pycountry library (<code>pip install pycountry</code>)</li>
+<li>Tabulate library (<code>pip install tabulate</code>)</li>
+<li>Tqdm library (<code>pip install tqdm</code>)</li>
+<li>Termcolor library (<code>pip install termcolor</code>)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/noobosaurus-r3x/osintagram.git
+</span></span></code></pre></div><p>Navigate to the project directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd osintagram
+</span></span></code></pre></div><p>Run the script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python osintagram.py -s &lt;session_id&gt; -u &lt;username&gt; <span style="color:#f92672">[</span>-f<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-g<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-o &lt;output_file&gt;<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>or Interactive mode:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python osintagram.py -i
+</span></span></code></pre></div><p>Replace &lt;session_id&gt; with your Instagram session ID and &lt; username &gt; with the Instagram username you want to retrieve information for.</p>
+<p>To get your session ID, log into your Instagram account, and check your cookies. Copy/Paste the Value of the &ldquo;sessionid&rdquo;.</p>
+<p>Optional arguments:</p>
+<p>-i, &ndash;interactive: Will ask you the necessary infos to run the script. Don&rsquo;t use any other argument with -i.</p>
+<p>-f, &ndash;followers: Retrieve and display followers.</p>
+<p>-g, &ndash;following: Retrieve and display following.</p>
+<p>-o &lt;output_file&gt;, &ndash;output &lt;output_file&gt;: Save the output to the specified file.</p>
+<h2 id="view-the-output-in-the-console-or-check-the-saved-output-file-if-specified">View the output in the console or check the saved output file, if specified.</h2>
+<h1 id="credits">Credits</h1>
+<h2 id="osintgram-is-inspired-by-palenaths-toutatis-script-special-thanks-to-palenath-for-the-original-creation-httpsgithubcommegadosetoutatis">Osintgram is inspired by Palenath&rsquo;s Toutatis script. Special thanks to Palenath for the original creation. <a href="https://github.com/megadose/toutatis">https://github.com/megadose/toutatis</a></h2>
+<p>Here you can check the script <a href="../../static/files/osintagram.py">Osintagram.py</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> phonenumbers
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pycountry
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> phonenumbers.phonenumberutil <span style="color:#f92672">import</span> region_code_for_country_code
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> tabulate <span style="color:#f92672">import</span> tabulate
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> termcolor <span style="color:#f92672">import</span> colored
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> tqdm <span style="color:#f92672">import</span> tqdm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>API_HEADERS <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;User-Agent&#39;</span>: <span style="color:#e6db74">&#39;Instagram 64.0.0.14.96&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Accept-Language&#39;</span>: <span style="color:#e6db74">&#39;en-US&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/x-www-form-urlencoded; charset=UTF-8&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;X-IG-App-ID&#39;</span>: <span style="color:#e6db74">&#39;937027530717640&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Accept-Encoding&#39;</span>: <span style="color:#e6db74">&#39;gzip, deflate&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>API_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://i.instagram.com/api/v1&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstagramAPI</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, session_id):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>session_id <span style="color:#f92672">=</span> session_id
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>session <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>update(API_HEADERS)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_make_request</span>(self, url):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            cookies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;sessionid&#39;</span>: self<span style="color:#f92672">.</span>session_id}
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>cookies)
+</span></span><span style="display:flex;"><span>            response<span style="color:#f92672">.</span>raise_for_status()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>RequestException <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_id</span>(self, username):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_make_request(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://www.instagram.com/</span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">/?__a=1&amp;__d=dis&#39;</span>)
+</span></span><span style="display:flex;"><span>            user_id <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#34;logging_page_id&#34;</span>]<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#34;profilePage_&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> user_id, <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>HTTPError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> e<span style="color:#f92672">.</span>response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">404</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, <span style="color:#e6db74">&#39;User not found&#39;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, <span style="color:#e6db74">&#39;Rate limit&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> (json<span style="color:#f92672">.</span>JSONDecodeError, <span style="color:#a6e22e">KeyError</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, <span style="color:#e6db74">&#39;Error decoding response&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_info</span>(self, user_id):
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_make_request(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>API_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/users/</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/info/&#39;</span>)
+</span></span><span style="display:flex;"><span>        user_info <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;user&#39;</span>, {})
+</span></span><span style="display:flex;"><span>        user_info[<span style="color:#e6db74">&#39;userID&#39;</span>] <span style="color:#f92672">=</span> user_id
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Retrieve additional user information</span>
+</span></span><span style="display:flex;"><span>        profile_pic_url <span style="color:#f92672">=</span> user_info[<span style="color:#e6db74">&#39;hd_profile_pic_url_info&#39;</span>][<span style="color:#e6db74">&#39;url&#39;</span>]
+</span></span><span style="display:flex;"><span>        website <span style="color:#f92672">=</span> user_info<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;website&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>)
+</span></span><span style="display:flex;"><span>        email <span style="color:#f92672">=</span> user_info<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;public_email&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Retrieve recent posts</span>
+</span></span><span style="display:flex;"><span>        recent_posts <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_make_request(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>API_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/feed/user/</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#39;</span>)
+</span></span><span style="display:flex;"><span>        posts_data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;items&#39;</span>, [])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> post <span style="color:#f92672">in</span> posts_data:
+</span></span><span style="display:flex;"><span>            post_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://www.instagram.com/p/</span><span style="color:#e6db74">{</span>post[<span style="color:#e6db74">&#39;code&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>            recent_posts<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#39;url&#39;</span>: post_url, <span style="color:#e6db74">&#39;caption&#39;</span>: post<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;caption&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Add additional user information to the user_info dictionary</span>
+</span></span><span style="display:flex;"><span>        user_info[<span style="color:#e6db74">&#39;profile_picture&#39;</span>] <span style="color:#f92672">=</span> profile_pic_url
+</span></span><span style="display:flex;"><span>        user_info[<span style="color:#e6db74">&#39;website&#39;</span>] <span style="color:#f92672">=</span> website
+</span></span><span style="display:flex;"><span>        user_info[<span style="color:#e6db74">&#39;recent_posts&#39;</span>] <span style="color:#f92672">=</span> recent_posts
+</span></span><span style="display:flex;"><span>        user_info[<span style="color:#e6db74">&#39;email&#39;</span>] <span style="color:#f92672">=</span> email
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> user_info
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_followers</span>(self, user_id):
+</span></span><span style="display:flex;"><span>        followers <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        next_max_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        total_followers <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pbar <span style="color:#f92672">=</span> tqdm(desc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Fetching followers&#39;</span>, unit<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; followers&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_make_request(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>API_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/friendships/</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/followers/?max_id=</span><span style="color:#e6db74">{</span>next_max_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            users <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;users&#39;</span>, [])
+</span></span><span style="display:flex;"><span>            followers<span style="color:#f92672">.</span>extend(users)
+</span></span><span style="display:flex;"><span>            next_max_id <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;next_max_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> total_followers <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                total_followers <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;count&#39;</span>, len(users))
+</span></span><span style="display:flex;"><span>                pbar<span style="color:#f92672">.</span>total <span style="color:#f92672">=</span> total_followers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            pbar<span style="color:#f92672">.</span>update(len(users))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> next_max_id:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pbar<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> followers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_following</span>(self, user_id):
+</span></span><span style="display:flex;"><span>        following <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        next_max_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        total_following <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pbar <span style="color:#f92672">=</span> tqdm(desc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Fetching following&#39;</span>, unit<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; following&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_make_request(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>API_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/friendships/</span><span style="color:#e6db74">{</span>user_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/following/?max_id=</span><span style="color:#e6db74">{</span>next_max_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            users <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;users&#39;</span>, [])
+</span></span><span style="display:flex;"><span>            following<span style="color:#f92672">.</span>extend(users)
+</span></span><span style="display:flex;"><span>            next_max_id <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;next_max_id&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> total_following <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                total_following <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;count&#39;</span>, len(users))
+</span></span><span style="display:flex;"><span>                pbar<span style="color:#f92672">.</span>total <span style="color:#f92672">=</span> total_following
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            pbar<span style="color:#f92672">.</span>update(len(users))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> next_max_id:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pbar<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> following
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">format_user_info</span>(user_info):
+</span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Informations about     : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#34;username&#34;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;userID                 : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#34;userID&#34;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Full Name              : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#34;full_name&#34;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Verified               : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#39;is_verified&#39;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> colored(<span style="color:#e6db74">&#34;Is business Account : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;is_business&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Is private Account     : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;is_private&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Follower               : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;follower_count&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#34; | &#34;</span> <span style="color:#f92672">+</span> colored(<span style="color:#e6db74">&#34;Following : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;following_count&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Number of posts        : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;media_count&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Number of tag in posts : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;following_tag_count&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user_info[<span style="color:#e6db74">&#34;external_url&#34;</span>]:
+</span></span><span style="display:flex;"><span>        output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;External url           : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#34;external_url&#34;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;IGTV posts             : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(str(user_info[<span style="color:#e6db74">&#34;total_igtv_videos&#34;</span>]), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Biography              : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                  colored((<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">25</span>)<span style="color:#f92672">.</span>join(user_info[<span style="color:#e6db74">&#34;biography&#34;</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)), <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#f92672">in</span> user_info <span style="color:#f92672">and</span> user_info[<span style="color:#e6db74">&#34;email&#34;</span>]:
+</span></span><span style="display:flex;"><span>        output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Email                   : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#34;email&#34;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;public_phone_number&#34;</span> <span style="color:#f92672">in</span> user_info <span style="color:#f92672">and</span> str(user_info[<span style="color:#e6db74">&#34;public_phone_number&#34;</span>]):
+</span></span><span style="display:flex;"><span>        phone_number <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;+&#34;</span> <span style="color:#f92672">+</span> str(user_info[<span style="color:#e6db74">&#34;public_phone_country_code&#34;</span>]) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> str(
+</span></span><span style="display:flex;"><span>            user_info[<span style="color:#e6db74">&#34;public_phone_number&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            parsed_number <span style="color:#f92672">=</span> phonenumbers<span style="color:#f92672">.</span>parse(phone_number)
+</span></span><span style="display:flex;"><span>            country_code <span style="color:#f92672">=</span> region_code_for_country_code(parsed_number<span style="color:#f92672">.</span>country_code)
+</span></span><span style="display:flex;"><span>            country <span style="color:#f92672">=</span> pycountry<span style="color:#f92672">.</span>countries<span style="color:#f92672">.</span>get(alpha_2<span style="color:#f92672">=</span>country_code)
+</span></span><span style="display:flex;"><span>            phone_number <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>phone_number<span style="color:#e6db74">}</span><span style="color:#e6db74"> (</span><span style="color:#e6db74">{</span>country<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> phonenumbers<span style="color:#f92672">.</span>phonenumberutil<span style="color:#f92672">.</span>NumberParseException:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Public Phone number    : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(phone_number, <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Profile Picture        : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#39;profile_picture&#39;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Website                : &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(user_info[<span style="color:#e6db74">&#39;website&#39;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> user_info[<span style="color:#e6db74">&#39;recent_posts&#39;</span>]:
+</span></span><span style="display:flex;"><span>        output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Recent Posts:&#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> post <span style="color:#f92672">in</span> user_info[<span style="color:#e6db74">&#39;recent_posts&#39;</span>]:
+</span></span><span style="display:flex;"><span>            output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;URL: &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(post[<span style="color:#e6db74">&#39;url&#39;</span>], <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>            caption <span style="color:#f92672">=</span> post<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;caption&#39;</span>, <span style="color:#e6db74">&#39;N/A&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> isinstance(caption, str):
+</span></span><span style="display:flex;"><span>                output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Caption: &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(caption, <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                output<span style="color:#f92672">.</span>append(colored(<span style="color:#e6db74">&#34;Caption: &#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> colored(<span style="color:#e6db74">&#34;N/A&#34;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>))
+</span></span><span style="display:flex;"><span>            output<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(output)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_followers</span>(api, user_id):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Retrieving followers...&#34;</span>)
+</span></span><span style="display:flex;"><span>    followers <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_followers(user_id)
+</span></span><span style="display:flex;"><span>    follower_table <span style="color:#f92672">=</span> [[follower[<span style="color:#e6db74">&#34;username&#34;</span>], follower<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;full_name&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)] <span style="color:#66d9ef">for</span> follower <span style="color:#f92672">in</span> followers]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tabulate(follower_table, headers<span style="color:#f92672">=</span>[colored(<span style="color:#e6db74">&#34;Username&#34;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>), colored(<span style="color:#e6db74">&#34;Full Name&#34;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>)],
+</span></span><span style="display:flex;"><span>                    tablefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;presto&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_user_following</span>(api, user_id):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Retrieving following...&#34;</span>)
+</span></span><span style="display:flex;"><span>    following <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_following(user_id)
+</span></span><span style="display:flex;"><span>    following_table <span style="color:#f92672">=</span> [[account[<span style="color:#e6db74">&#34;username&#34;</span>], account<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;full_name&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)] <span style="color:#66d9ef">for</span> account <span style="color:#f92672">in</span> following]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tabulate(following_table, headers<span style="color:#f92672">=</span>[colored(<span style="color:#e6db74">&#34;Username&#34;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>), colored(<span style="color:#e6db74">&#34;Full Name&#34;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>)],
+</span></span><span style="display:flex;"><span>                    tablefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;presto&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_output</span>(output, file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>        file<span style="color:#f92672">.</span>write(output)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Output saved to:&#34;</span>, file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser(description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Instagram User Information Retrieval&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-s&#39;</span>, <span style="color:#e6db74">&#39;--sessionid&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Instagram session ID&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-u&#39;</span>, <span style="color:#e6db74">&#39;--username&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username to retrieve information for&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-o&#39;</span>, <span style="color:#e6db74">&#39;--output&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Output file path&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-i&#39;</span>, <span style="color:#e6db74">&#39;--interactive&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_true&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Interactive mode&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-f&#39;</span>, <span style="color:#e6db74">&#39;--followers&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_true&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Retrieve and display followers&#34;</span>)
+</span></span><span style="display:flex;"><span>    parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;-g&#39;</span>, <span style="color:#e6db74">&#39;--following&#39;</span>, action<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;store_true&#39;</span>, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Retrieve and display following&#34;</span>)
+</span></span><span style="display:flex;"><span>    args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> args<span style="color:#f92672">.</span>interactive <span style="color:#f92672">and</span> (args<span style="color:#f92672">.</span>sessionid <span style="color:#f92672">or</span> args<span style="color:#f92672">.</span>username <span style="color:#f92672">or</span> args<span style="color:#f92672">.</span>followers <span style="color:#f92672">or</span> args<span style="color:#f92672">.</span>following <span style="color:#f92672">or</span> args<span style="color:#f92672">.</span>output):
+</span></span><span style="display:flex;"><span>        parser<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Interactive mode (-i) cannot be used with other command-line arguments.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> args<span style="color:#f92672">.</span>interactive:
+</span></span><span style="display:flex;"><span>        session_id <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter your Instagram session ID: &#34;</span>)
+</span></span><span style="display:flex;"><span>        username <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter the username to retrieve information for: &#34;</span>)
+</span></span><span style="display:flex;"><span>        followers <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Retrieve followers? (y/n): &#34;</span>)<span style="color:#f92672">.</span>lower() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;y&#34;</span>
+</span></span><span style="display:flex;"><span>        following <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Retrieve following? (y/n): &#34;</span>)<span style="color:#f92672">.</span>lower() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;y&#34;</span>
+</span></span><span style="display:flex;"><span>        save_output_option <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Save output to a file? (y/n): &#34;</span>)<span style="color:#f92672">.</span>lower() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;y&#34;</span>
+</span></span><span style="display:flex;"><span>        output_file <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter the output file path: &#34;</span>) <span style="color:#66d9ef">if</span> save_output_option <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        session_id <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>sessionid
+</span></span><span style="display:flex;"><span>        username <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>username
+</span></span><span style="display:flex;"><span>        followers <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>followers
+</span></span><span style="display:flex;"><span>        following <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>following
+</span></span><span style="display:flex;"><span>        output_file <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    api <span style="color:#f92672">=</span> InstagramAPI(session_id)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user_id, error <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_user_id(username)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> error:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>error<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    user_info <span style="color:#f92672">=</span> api<span style="color:#f92672">.</span>get_user_info(user_id)
+</span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> format_user_info(user_info)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> followers:
+</span></span><span style="display:flex;"><span>        follower_output <span style="color:#f92672">=</span> get_user_followers(api, user_id)
+</span></span><span style="display:flex;"><span>        output <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> colored(<span style="color:#e6db74">&#34;Followers:&#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> follower_output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> following:
+</span></span><span style="display:flex;"><span>        following_output <span style="color:#f92672">=</span> get_user_following(api, user_id)
+</span></span><span style="display:flex;"><span>        output <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> colored(<span style="color:#e6db74">&#34;Following:&#34;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> following_output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> output_file:
+</span></span><span style="display:flex;"><span>        save_output(output, output_file)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(output)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><hr>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/traduction-du-message-de-lockbit/">Lockbit, la traduction de son message</a></li>
+				
+				<li><a href="/posts/evil-sourcer/">Evil Sourcer</a></li>
+				
+				<li><a href="/posts/meterpreter-cheat-sheet/">Meterpreter Cheat Sheet</a></li>
+				
+				<li><a href="/posts/hydra-cheat-sheet/">Hydra Cheat Sheet</a></li>
+				
+				<li><a href="/posts/ffuf-cheat-sheet/">Ffuf Cheat Sheet</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2024 <a href="https://noobosaurus-r3x.github.io"><b>Nooblogaurus</b></a>.
+	<a href="https://www.youtube.com/@HacktBack"><b>YouTube_HacktBack</b></a>.
+	<a href="https://www.youtube.com/@Noobosaurus"><b>YouTube_Noobosaurus</b></a>.
+	<a href="https://twitter.com/NoobosaurusR3x"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/noobosaurus-r3x-683783231/"><b>LinkedIn</b></a>.
+	<a href="https://github.com/noobosaurus-r3x"><b>Github</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
